@@ -8,7 +8,7 @@
 **1. Create a container**\
 `docker create --name konjungate-qt \`\
 `        -e DISPLAY=$DISPLAY \`\
-`        -e XAUTHORITY=/tmp/Xauthority \`\  
+`        -e XAUTHORITY=/tmp/Xauthority \`\
 `        -v PATH-TO-XAUTHORITY-FILE:~/.Xauthority \`\
 `        -v /tmp/.X11-unix:/tmp/.X11-unix \`\
 `        -v PATH-TO-LOCAL-WALLET-DIRECTORY:/root/.Konjungate \`\
@@ -16,7 +16,7 @@
 `        thesix/konjungate-qt`
         
 **2. The output will be the container ID. If you forgot it, then run `docker ps` and get the container ID of the thesix/konjungate-qt image. Copy this string and replace it with $containerID in the following command to allow forwarding from our container to xhost:**\
-``xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerId``
+``xhost +local:`docker inspect --format='{{ .Config.Hostname }}' $containerID``
 
 **3. Start the container**\
 `docker start konjungate-qt`
